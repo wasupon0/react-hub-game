@@ -13,7 +13,9 @@ export default function GameCard({ game }: Props) {
     <Card>
       <Image src={getCroppedImageUrl(game.background_image)} alt={game.name} />
       <CardBody>
-        <Heading fontSize="2xl">{game.name}</Heading>
+        <Heading fontSize="xl">
+          {game.name.length > 10 ? game.name.slice(0, 15) + "..." : game.name}
+        </Heading>
         <HStack justifyContent={"space-between"}>
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
