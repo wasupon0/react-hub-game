@@ -11,8 +11,8 @@ export default function GameAttributes({ game }: Props) {
   return (
     <SimpleGrid columns={2} spacing={4} as="dl">
       <DefinitionItem term="Platforms">
-        {game.parent_platforms?.map(({ platforms }) => (
-          <Text key={platforms.id}>{platforms.name}</Text>
+        {game.parent_platforms?.map((p) => (
+          <Text key={p.platform.id}>{p.platform.name}</Text>
         ))}
       </DefinitionItem>
 
