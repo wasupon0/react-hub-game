@@ -1,3 +1,4 @@
+import Trailer from "../entities/Trailer";
 import useTrailers from "../hooks/useTrailers";
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 
 export default function GameTrailer({ gameId }: Props) {
   const { data, error, isLoading } = useTrailers(gameId);
-  const first = data?.results[0];
+  const first: any = data?.results[0];
 
   if (isLoading) return <div>Loading...</div>;
   if (error) throw error;
